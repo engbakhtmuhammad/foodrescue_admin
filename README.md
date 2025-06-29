@@ -1,4 +1,4 @@
-# Dineout Admin Panel Clone
+# Food Rescue Admin Panel
 
 A comprehensive Flutter web application for restaurant management, built as a clone of the Dineout admin panel. This application provides a complete solution for managing restaurants, orders, users, content, and more.
 
