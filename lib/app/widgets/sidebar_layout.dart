@@ -253,6 +253,11 @@ class SidebarLayout extends StatelessWidget {
           route: AppRoutes.orders,
         ),
         NavigationItem(
+          icon: Icons.table_restaurant,
+          title: 'Bookings',
+          route: AppRoutes.restaurantBookings,
+        ),
+        NavigationItem(
           icon: Icons.menu_book,
           title: AppStrings.menus,
           route: AppRoutes.menus,

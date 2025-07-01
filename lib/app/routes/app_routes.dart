@@ -20,7 +20,10 @@ class AppRoutes {
   // Order Routes
   static const String orders = '/orders';
   static const String orderDetails = '/order-details';
-  
+
+  // Booking Routes
+  static const String restaurantBookings = '/restaurant-bookings';
+
   // Menu Routes
   static const String menus = '/menus';
   static const String addMenu = '/add-menu';

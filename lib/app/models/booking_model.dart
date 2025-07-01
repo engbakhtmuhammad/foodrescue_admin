@@ -33,6 +33,8 @@ class BookingModel {
     this.additionalData,
   });
 
+
+
   // Convert from Firestore Document
   factory BookingModel.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;

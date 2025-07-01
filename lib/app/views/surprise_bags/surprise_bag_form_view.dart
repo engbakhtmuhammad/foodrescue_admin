@@ -280,12 +280,51 @@ class SurpriseBagFormView extends StatelessWidget {
             return const SizedBox.shrink();
           }),
           
-          // Pickup Address
-          CustomTextField(
-            controller: controller.pickupAddressController,
-            label: 'Pickup Address',
-            hintText: 'Enter pickup location address',
-            validator: (value) => controller.validateRequired(value, 'Pickup address'),
+          // Pickup Address (Auto-filled from restaurant)
+          Container(
+            padding: EdgeInsets.all(16.w),
+            decoration: BoxDecoration(
+              color: AppColors.background,
+              borderRadius: BorderRadius.circular(8.r),
+              border: Border.all(color: AppColors.border),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Pickup Address',
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textPrimary,
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Obx(() {
+                  final selectedRestaurant = controller.restaurants.firstWhereOrNull(
+                    (r) => r.id == controller.selectedRestaurantId.value,
+                  );
+                  return Text(
+                    selectedRestaurant?.fullAddress ?? 'Select a restaurant first',
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      color: selectedRestaurant != null
+                          ? AppColors.textPrimary
+                          : AppColors.textHint,
+                    ),
+                  );
+                }),
+                SizedBox(height: 4.h),
+                Text(
+                  'Address is automatically taken from the selected restaurant',
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                    color: AppColors.textHint,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
+            ),
           ),
           
           SizedBox(height: 16.h),

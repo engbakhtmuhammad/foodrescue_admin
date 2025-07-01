@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class SurpriseBagModel {
   final String id;
   final String restaurantId; // Restaurant ID
+  final String restaurantName; // Restaurant Name
   final String title;
   final String description;
   final String img;
@@ -51,6 +52,7 @@ class SurpriseBagModel {
   SurpriseBagModel({
     required this.id,
     required this.restaurantId,
+    required this.restaurantName,
     required this.title,
     required this.description,
     required this.img,
@@ -139,6 +141,7 @@ class SurpriseBagModel {
     return SurpriseBagModel(
       id: doc.id,
       restaurantId: data['restaurantId'] ?? '',
+      restaurantName: data['restaurantName'] ?? '',
       title: data['title'] ?? '',
       description: data['description'] ?? '',
       img: data['img'] ?? '',
@@ -181,6 +184,7 @@ class SurpriseBagModel {
     return SurpriseBagModel(
       id: map['id'] ?? '',
       restaurantId: map['restaurantId'] ?? '',
+      restaurantName: map['restaurantName'] ?? '',
       title: map['title'] ?? '',
       description: map['description'] ?? '',
       img: map['img'] ?? '',
@@ -229,6 +233,7 @@ class SurpriseBagModel {
     return {
       'id': id,
       'restaurantId': restaurantId,
+      'restaurantName': restaurantName,
       'title': title,
       'description': description,
       'img': img,
@@ -270,6 +275,7 @@ class SurpriseBagModel {
   SurpriseBagModel copyWith({
     String? id,
     String? restaurantId,
+    String? restaurantName,
     String? title,
     String? description,
     String? img,
@@ -308,6 +314,7 @@ class SurpriseBagModel {
     return SurpriseBagModel(
       id: id ?? this.id,
       restaurantId: restaurantId ?? this.restaurantId,
+      restaurantName: restaurantName ?? this.restaurantName,
       title: title ?? this.title,
       description: description ?? this.description,
       img: img ?? this.img,

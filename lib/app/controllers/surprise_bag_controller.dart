@@ -35,7 +35,6 @@ class SurpriseBagController extends GetxController {
   final itemsLeftController = TextEditingController();
   final totalItemsController = TextEditingController();
   final pickupInstructionsController = TextEditingController();
-  final pickupAddressController = TextEditingController();
   final dietaryInfoController = TextEditingController();
   
   // Time controllers
@@ -91,7 +90,6 @@ class SurpriseBagController extends GetxController {
     itemsLeftController.dispose();
     totalItemsController.dispose();
     pickupInstructionsController.dispose();
-    pickupAddressController.dispose();
     dietaryInfoController.dispose();
     todayPickupStartController.dispose();
     todayPickupEndController.dispose();
@@ -254,7 +252,6 @@ class SurpriseBagController extends GetxController {
     itemsLeftController.clear();
     totalItemsController.clear();
     pickupInstructionsController.clear();
-    pickupAddressController.clear();
     dietaryInfoController.clear();
     todayPickupStartController.clear();
     todayPickupEndController.clear();
@@ -286,7 +283,6 @@ class SurpriseBagController extends GetxController {
     itemsLeftController.text = bag.itemsLeft.toString();
     totalItemsController.text = bag.totalItems.toString();
     pickupInstructionsController.text = bag.pickupInstructions;
-    pickupAddressController.text = bag.pickupAddress;
     dietaryInfoController.text = bag.dietaryInfo;
     todayPickupStartController.text = bag.todayPickupStart;
     todayPickupEndController.text = bag.todayPickupEnd;
@@ -384,8 +380,20 @@ class SurpriseBagController extends GetxController {
         (cuisine) => cuisine.id == selectedCategoryId.value,
       );
 
+      // Get the selected restaurant to use its coordinates and details
+      final selectedRestaurant = restaurants.firstWhereOrNull(
+        (restaurant) => restaurant.id == selectedRestaurantId.value,
+      );
+
+      if (selectedRestaurant == null) {
+        AppUtils.showErrorSnackbar('Selected restaurant not found');
+        isLoading.value = false;
+        return;
+      }
+
       final bagData = {
         'restaurantId': selectedRestaurantId.value,
+        'restaurantName': selectedRestaurant.title,
         'title': titleController.text.trim(),
         'description': descriptionController.text.trim(),
         'img': uploadedImageUrl.value,
@@ -404,9 +412,9 @@ class SurpriseBagController extends GetxController {
         'tomorrowPickupEnd': tomorrowPickupEndController.text.trim(),
         'pickupInstructions': pickupInstructionsController.text.trim(),
         'distance': 0.0, // Distance will be calculated in user app
-        'pickupAddress': pickupAddressController.text.trim(),
-        'pickupLatitude': 0.0, // This could be set from address geocoding
-        'pickupLongitude': 0.0, // This could be set from address geocoding
+        'pickupAddress': selectedRestaurant.fullAddress,
+        'pickupLatitude': selectedRestaurant.latitude,
+        'pickupLongitude': selectedRestaurant.longitude,
         'possibleItems': possibleItems.toList(),
         'allergens': allergens.toList(),
         'isVegetarian': selectedIsVegetarian.value,

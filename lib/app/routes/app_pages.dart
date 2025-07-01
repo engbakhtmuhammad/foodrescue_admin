@@ -16,6 +16,7 @@ import '../views/faqs/faq_list_view.dart';
 import '../views/payouts/payout_list_view.dart';
 import '../views/payment_gateways/payment_gateway_list_view.dart';
 import '../views/bookings/booking_list_view.dart';
+import '../views/restaurant_bookings/restaurant_booking_list_view.dart';
 import '../views/gallery/gallery_list_view.dart';
 import '../views/settings/settings_view.dart';
 import '../bindings/initial_binding.dart';
@@ -112,6 +113,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.bookings,
       page: () => const BookingListView(),
+      binding: InitialBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.restaurantBookings,
+      page: () => const RestaurantBookingListView(),
       binding: InitialBinding(),
     ),
     GetPage(
