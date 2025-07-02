@@ -24,6 +24,7 @@ class AppConstants {
   static const String bookingsCollection = 'bookings';
   static const String settingsCollection = 'settings';
   static const String surpriseBagsCollection = 'surprise_bags';
+  static const String surpriseBagOrdersCollection = 'surprise_bag_orders';
   static const String reviewsCollection = 'reviews';
   
   // Storage Paths

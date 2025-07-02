@@ -33,6 +33,7 @@ class AppRoutes {
   static const String surpriseBags = '/surprise-bags';
   static const String addSurpriseBag = '/add-surprise-bag';
   static const String editSurpriseBag = '/edit-surprise-bag';
+  static const String surpriseBagOrders = '/surprise-bag-orders';
   
   // Content Management Routes
   static const String banners = '/banners';

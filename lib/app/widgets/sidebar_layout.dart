@@ -268,6 +268,11 @@ class SidebarLayout extends StatelessWidget {
           route: AppRoutes.surpriseBags,
         ),
         NavigationItem(
+          icon: Icons.shopping_bag,
+          title: 'Bag Orders',
+          route: AppRoutes.surpriseBagOrders,
+        ),
+        NavigationItem(
           icon: Icons.photo_library,
           title: AppStrings.gallery,
           route: AppRoutes.galleries,
