@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Primary Colors
-  static const Color primary = Color(0xFF2196F3);
-  static const Color primaryDark = Color(0xFF1976D2);
-  static const Color primaryLight = Color(0xFFBBDEFB);
-  
-  // Secondary Colors
-  static const Color secondary = Color(0xFFFF9800);
-  static const Color secondaryDark = Color(0xFFF57C00);
-  static const Color secondaryLight = Color(0xFFFFE0B2);
+  // Primary Colors - TGTG Teal Theme
+  static const Color primary = Color(0xFF00695C); // Teal 800
+  static const Color primaryDark = Color(0xFF004D40); // Teal 900
+  static const Color primaryLight = Color(0xFF4DB6AC); // Teal 300
+
+  // Secondary Colors - Complementary Orange
+  static const Color secondary = Color(0xFFFF7043); // Deep Orange 400
+  static const Color secondaryDark = Color(0xFFE64A19); // Deep Orange 700
+  static const Color secondaryLight = Color(0xFFFFAB91); // Deep Orange 200
   
   // Background Colors
   static const Color background = Color(0xFFF5F5F5);
@@ -49,16 +49,16 @@ class AppColors {
     end: Alignment.bottomRight,
   );
   
-  // Chart Colors
+  // Chart Colors - Teal Theme
   static const List<Color> chartColors = [
-    Color(0xFF2196F3),
-    Color(0xFF4CAF50),
-    Color(0xFFFF9800),
-    Color(0xFFF44336),
-    Color(0xFF9C27B0),
-    Color(0xFF00BCD4),
-    Color(0xFFFFEB3B),
-    Color(0xFF795548),
+    Color(0xFF00695C), // Teal 800
+    Color(0xFF4CAF50), // Green 400
+    Color(0xFFFF7043), // Deep Orange 400
+    Color(0xFFF44336), // Red 400
+    Color(0xFF26A69A), // Teal 400
+    Color(0xFF80CBC4), // Teal 200
+    Color(0xFFFFAB91), // Deep Orange 200
+    Color(0xFF4DB6AC), // Teal 300
   ];
   
   // Restaurant Status Colors
@@ -66,28 +66,28 @@ class AppColors {
   static const Color inactiveStatus = Color(0xFFF44336);
   static const Color pendingStatus = Color(0xFFFF9800);
   
-  // Order Status Colors
-  static const Color orderPending = Color(0xFFFF9800);
-  static const Color orderConfirmed = Color(0xFF2196F3);
-  static const Color orderCompleted = Color(0xFF4CAF50);
-  static const Color orderCancelled = Color(0xFFF44336);
+  // Order Status Colors - Teal Theme
+  static const Color orderPending = Color(0xFFFF7043); // Deep Orange 400
+  static const Color orderConfirmed = Color(0xFF00695C); // Teal 800
+  static const Color orderCompleted = Color(0xFF4CAF50); // Green 400
+  static const Color orderCancelled = Color(0xFFF44336); // Red 400
   
   // Payment Status Colors
   static const Color paymentPending = Color(0xFFFF9800);
   static const Color paymentCompleted = Color(0xFF4CAF50);
   static const Color paymentFailed = Color(0xFFF44336);
   
-  // Sidebar Colors
-  static const Color sidebarBackground = Color(0xFF263238);
-  static const Color sidebarSelected = Color(0xFF37474F);
+  // Sidebar Colors - Teal Theme
+  static const Color sidebarBackground = Color(0xFF004D40); // Teal 900
+  static const Color sidebarSelected = Color(0xFF00695C); // Teal 800
   static const Color sidebarText = Color(0xFFFFFFFF);
-  static const Color sidebarIcon = Color(0xFFB0BEC5);
+  static const Color sidebarIcon = Color(0xFF4DB6AC); // Teal 300
   
-  // Dashboard Card Colors
-  static const Color dashboardCard1 = Color(0xFF2196F3);
-  static const Color dashboardCard2 = Color(0xFF4CAF50);
-  static const Color dashboardCard3 = Color(0xFFFF9800);
-  static const Color dashboardCard4 = Color(0xFFF44336);
-  static const Color dashboardCard5 = Color(0xFF9C27B0);
-  static const Color dashboardCard6 = Color(0xFF00BCD4);
+  // Dashboard Card Colors - Teal Theme
+  static const Color dashboardCard1 = Color(0xFF00695C); // Teal 800
+  static const Color dashboardCard2 = Color(0xFF4CAF50); // Green 400
+  static const Color dashboardCard3 = Color(0xFFFF7043); // Deep Orange 400
+  static const Color dashboardCard4 = Color(0xFFF44336); // Red 400
+  static const Color dashboardCard5 = Color(0xFF26A69A); // Teal 400
+  static const Color dashboardCard6 = Color(0xFF80CBC4); // Teal 200
 }
